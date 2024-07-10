@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mamawhes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <style>
+        .post {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 16px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+        .post a {
+            color: black;
+            text-decoration: none;
+        }
+        .post a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+     
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .article {
+            background-color: rgb(190, 219, 253);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 16px;
+            padding: 20px 64px 64px;
+            text-align: left;
+            width: 720px;
+            min-height:1080px; height:auto!important; height:400px;
+            
+            
+        }
+        
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        function showmd(){
+            var article="{{content}}";
+            // article=article.replace("<!--(.|[\r\n])*?-->", '');
+            var html=marked.parse(article.split("&lt;br&gt;").join("\n"));
+
+            document.getElementById("md-view").innerHTML = html;
+            var imgs=document.images
+            for(var i=0;i<imgs.length;i++){
+                var s=imgs[i].src;
+                console.log(s)
+                imgs[i].src=s.replace("pictures","static/pictures")
+            }
+        }
+        window.onload=function(){
+            SetHref();
+            showmd();
+        }
+   
+    </script>
+</head>
+<body >
+    <header>
+        <h1>麻麻维奇的个人博客(正在开发中...)</h1>
+    </header>
+    <nav>
+        <a href="#">网站导航</a>
+        <a href="/">博客</a>
+        <a href="#">关于我</a>
+    </nav>
+    <main>
+        <div class="article" id="md-view">
+            <p></p>
+        </div>
+    </main>
+    <footer>
+        <p>版权所有 &copy; 2024 我的个人博客</p>
+    </footer>
+</body>
+</html>
