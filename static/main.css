@@ -56,20 +56,25 @@ footer {
         border-radius: 5px 0 0 5px;
         padding: 10px;
         z-index: 1000;
+        flex-direction: column;
+        display: flex;
     }
 
-    .side-nav-item {
+    .side-nav a {
         text-align: center;
+        text-decoration: none;
         color: white;
         padding: 10px;
         margin: 5px 0;
         cursor: pointer;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 5px;
+       
+
         transition: background-color 0.3s, color 0.3s;
     }
 
-    .side-nav-item:hover {
+    .side-nav a:hover {
         background: #007bff;
         color: #fff;
     }

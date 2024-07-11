@@ -38,11 +38,11 @@
         
     </style>
     <script>
-        function get_eles(){
+        function set_search_eles(){
             const pack="{{articles_ele}}";
             const eles=pack.split("|");
             var html=""
-            for(var i=0;i<eles.length-1;i++){
+            for(var i=1;i<eles.length-1;i++){
                 let p=eles[i].split("#");
                 html+=`<div class='post'><a href='/article/${p[0]}''>${p[1]}</a><p>${p[2]}</p></div>`;
 
@@ -51,8 +51,8 @@
         }
 
        window.onload=function(){
-        get_eles();
-        SetNav();
+        set_search_eles();
+        InitTemplates();
         // SetHref();
 
        }
@@ -64,15 +64,9 @@
     <header>
         <h1>麻麻维奇的个人博客(正在开发中...)</h1>
     </header>
-    <nav>
-    </nav>
+    <nav></nav>
     <!-- 侧边栏 -->
-<div class="side-nav">
-	<div class="side-nav-item" onclick="scrollToSection('box1')">b站</div>
-    <div class="side-nav-item" onclick="scrollToSection('box2')">github</div>
-    <div class="side-nav-item" onclick="scrollToSection('box3')">gitee</div>
-    <div class="side-nav-item" onclick="scrollToSection('box4')">csdn</div>
-</div>
+    <div class="side-nav"></div>
 
 
     <main id="main">
@@ -81,29 +75,10 @@
             <a href="#">这是第一篇博客文章</a>
             <p>这是一段关于第一篇博客文章的简介。</p>
         </div> -->
-        <!-- <div class="post">
-            <a href="#">这是第二篇博客文章</a>
-            <p>这是一段关于第二篇博客文章的简介。</p>
-        </div>
-        <div class="post">
-            <a href="#">这是第三篇博客文章</a>
-            <p>这是一段关于第三篇博客文章的简介。</p>
-        </div>
-        <div class="post">
-            <a href="#">这是第一篇博客文章</a>
-            <p>这是一段关于第一篇博客文章的简介。</p>
-        </div>
-        <div class="post">
-            <a href="#">这是第二篇博客文章</a>
-            <p>这是一段关于第二篇博客文章的简介。</p>
-        </div>
-        <div class="post">
-            <a href="#">这是第三篇博客文章</a>
-            <p>这是一段关于第三篇博客文章的简介。</p>
-        </div> -->
     </main>
     <footer>
-        <p>版权所有 &copy; 2024 我的个人博客</p>
+        <!-- <p>版权所有 &copy; 2024 我的个人博客</p> -->
+        <p>Email: wmyspace@163.com</p>
     </footer>
 </body>
 </html>
