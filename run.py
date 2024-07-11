@@ -10,4 +10,5 @@ from src import app
 #     return render_template("index.html")
 if __name__ == '__main__':
     app.debug=True
-    app.run(host=sys.argv[1], port=sys.argv[2])
+    #app.run(host=sys.argv[1], port=sys.argv[2])
+    app.run(host="0.0.0.0",port= 8080)
