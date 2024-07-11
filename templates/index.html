@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mamawhes</title>
-    <link rel="icon" href="{{ url_for('static', filename='pictures/icon.ico') }}" type="image/x-icon">  //在网页标题左侧显示图标
-    <link rel="shortcut icon" href="{{ url_for('static', filename='pictures/icon.ico') }}" type="image/x-icon">  //在收藏夹显示图标
+    <link rel="icon" href="{{ url_for('static', filename='pictures/icon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='pictures/icon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <script src="{{ url_for('static', filename='main.js') }}"></script>
     <style>
@@ -66,6 +66,15 @@
     </header>
     <nav>
     </nav>
+    <!-- 侧边栏 -->
+<div class="side-nav">
+	<div class="side-nav-item" onclick="scrollToSection('box1')">b站</div>
+    <div class="side-nav-item" onclick="scrollToSection('box2')">github</div>
+    <div class="side-nav-item" onclick="scrollToSection('box3')">gitee</div>
+    <div class="side-nav-item" onclick="scrollToSection('box4')">csdn</div>
+</div>
+
+
     <main id="main">
 
         <!-- <div class="post">
