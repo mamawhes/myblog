@@ -1,20 +1,12 @@
-function SetHref(){
-    var navs= document.getElementsByTagName("nav")[0].children;
-    console.log(navs)
-    for(var i=0;i<navs.length;i++){
-        var element=navs[i]
-        if(element.innerHTML=="网站导航"){
-            element.href="/";
-        }
-        if(element.innerHTML=="博客"){
-            element.href="/";
-        }
-        if(element.innerHTML=="关于我"){
-            element.href="/";
-        }
-    }
-    // navs.forEach(element => {
-    
-    // });
-
+function AppendNavElement(nav,text,href){
+    var a=document.createElement("a");
+    a.href=href;
+    a.appendChild(document.createTextNode(text));
+    nav.appendChild(a);
+}
+function SetNav(){
+    var nav =document.getElementsByTagName("nav")[0];
+    AppendNavElement(nav,"网站导航","/");
+    AppendNavElement(nav,"博客","/");
+    AppendNavElement(nav,"关于我","/");   
 }

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mamawhes</title>
+    <link rel="icon" href="{{ url_for('static', filename='pictures/icon.ico') }}" type="image/x-icon">  //在网页标题左侧显示图标
+    <link rel="shortcut icon" href="{{ url_for('static', filename='pictures/icon.ico') }}" type="image/x-icon">  //在收藏夹显示图标
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <script src="{{ url_for('static', filename='main.js') }}"></script>
     <style>
@@ -50,7 +52,8 @@
 
        window.onload=function(){
         get_eles();
-        SetHref();
+        SetNav();
+        // SetHref();
 
        }
         
@@ -62,9 +65,6 @@
         <h1>麻麻维奇的个人博客(正在开发中...)</h1>
     </header>
     <nav>
-        <a href="#">网站导航</a>
-        <a href="/">博客</a>
-        <a href="#">关于我</a>
     </nav>
     <main id="main">
 
