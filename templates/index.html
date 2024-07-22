@@ -42,7 +42,7 @@
             const pack="{{articles_ele}}";
             const eles=pack.split("|");
             var html=""
-            for(var i=1;i<eles.length-1;i++){
+            for(var i=0;i<eles.length-1;i++){
                 let p=eles[i].split("#");
                 html+=`<div class='post'><a href='/article/${p[0]}''>${p[1]}</a><p>${p[2]}</p></div>`;
 
